@@ -1,0 +1,37 @@
+<%-include('../Includes/header.ejs')%>
+<link rel="stylesheet" type="text/css" href="/CSS/registration.css">
+</head>
+
+<body>
+    <%-include('../Includes/navigation.ejs')%>
+    <br>
+    <div id="form">
+        <form action="/postregistration" method="POST">
+            <h2 id="login"><b>Registration Form</b></h2><p></p>
+            <label for="fname">First Name</label>
+            <br>
+            <input type="text" name="fname">
+            <br><br>
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="text" name="lname">
+            <br><br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" name="email">
+            <br><br>
+            <label for="password">Password</label>
+            <br>
+            <input type="password" name="pwd"><br><br>
+            <p>
+            <input id="submit" type="submit" value="REGISTER"></p>
+            <p id="member">
+                Already a member? <a id="signup" href="/login">Signin now</a>
+            </p>
+            <%if(errorMsg){%>
+                <div class="errorMessage"><%=errorMsg%></div>
+            <%}%><br>
+        </form>
+    </div><br><br>
+
+            <%-include('../Includes/footer.ejs')%>
