@@ -14,13 +14,32 @@ exports.postdata = (req,res) =>{
     const p_price = req.body.price;
     const p_desc = req.body.description;
     const p_image = req.file;
-    const pImage_url= p_image.path;
+    const pImage_url= p_image.path; 
+    if(!p_name){
+        return res.status(401).json({
+            success: false,
+            message: "Product name is required"
+        })
+    }
+    else if(!p_price){
+        return res.status(401).json({
+            success: false,
+            message: "Price is required"
+        })
+    }
+    else if(!p_desc){
+        return res.status(401).json({
+            success: false,
+            message: "Description is required"
+        })
+    }
     const productData =new productModel({pName:p_name,pPrice:p_price,pDesc:p_desc,pImage:pImage_url});
     productData.save()
     .then(results=>{
         return res.status(201).json({
             success: true,
             message: "Product saved successfully",
+            result: results
         })
     }).catch(err=>{
         return res.status(401).json({
