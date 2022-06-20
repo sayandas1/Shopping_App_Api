@@ -13,10 +13,6 @@ const ProductSchema = new SchemaVariable({
     pDesc: {
         type: String,
         required: true
-    },
-    pImage: {
-        type: String,
-        required: true
     }
 })
 

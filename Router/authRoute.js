@@ -10,6 +10,8 @@ authRouting.post('/postregistration', authController.postRegistrationData);
 
 authRouting.post('/postLogin', authController.postLoginData);
 
+authRouting.post('/postLogin', authController.resetPassword);
+
 // authRouting.get('/logout', authController.logoutForm);
 
 module.exports = authRouting;

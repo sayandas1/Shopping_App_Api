@@ -87,7 +87,6 @@ exports.postRegistrationData = (req, res) => {
   }
 }
 
-
 // exports.loginForm = (req, res) => {
 //                 let message = req.flash('error');
 //                 console.log(message);
